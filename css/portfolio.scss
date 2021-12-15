@@ -1,0 +1,173 @@
+@import "style";
+@import "newsStyle";
+
+//  ============= Start Landing Section =============
+
+.landing-page {
+  margin-bottom: 17rem;
+}
+//  ============= End Landing Section =============
+
+// ============= Start Heading =============
+.heading {
+  margin-bottom: 7rem;
+  text-align: center;
+  h1 {
+    @include for_h1();
+    font-size: 40px;
+    text-align: center;
+  }
+  p {
+    color: #60656b;
+  }
+}
+// ============= End Heading =============
+
+//  ============= Start Portfolio Images =============
+//  =========== Start Section One ===========
+.portfolio {
+  margin-bottom: 0 !important;
+}
+// Ipad Screen
+@media (max-width: 992px) {
+  .portfolio {
+    margin-bottom: 0 !important;
+    .row-two {
+      height: 75vh;
+    }
+  }
+}
+//  =========== End Section One ===========
+//  =========== Start Section Two ===========
+
+.port-section-two {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  z-index: 100;
+
+  .info,
+  .col-two {
+    position: relative;
+    // Every h2
+    .clickHere {
+      opacity: 0;
+      position: absolute;
+      background-color: rgba($color: #161024, $alpha: 1);
+      color: #fff;
+      font-weight: 100;
+      top: 0;
+      width: 100%;
+      height: 80%;
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+      .clickHere {
+        opacity: 1;
+        height: 100%;
+        margin: 0;
+      }
+    }
+  }
+
+  // ------- Column One --------
+  .col-one {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 250px));
+    height: 100%;
+    flex: 1;
+    .info {
+      width: inherit;
+      height: 21vw;
+      .imgContainer-css {
+        height: 100%;
+        background-size: cover;
+      }
+      &:nth-child(1) {
+        .imgContainer-css {
+          background-image: url(../images/portfolio-img-one.jpg);
+        }
+      }
+      &:nth-child(2) {
+        .imgContainer-css {
+          background-image: url(../images/info-two-img.jpg);
+        }
+      }
+      &:nth-child(3) {
+        .imgContainer-css {
+          background-image: url(../images/portfolio-img-two.jpg);
+        }
+      }
+      &:nth-child(4) {
+        .imgContainer-css {
+          background-image: url(../images/portfolio-img-three.jpg);
+        }
+      }
+    }
+  }
+  // ------- Column Two --------
+
+  .col-two {
+    flex: 1;
+    .imgContainer-css {
+      background-image: url(../images/portfolio-big-img.jpg);
+      height: 100%;
+      background-size: cover;
+      background-position-x: right;
+    }
+  }
+}
+
+// Ipad Screen
+@media (max-width: 992px) {
+  .port-section-two {
+    display: grid;
+    // ------- Column One --------
+    .col-one {
+      grid-template-columns: 1fr 1fr !important;
+      order: 1;
+      .info {
+        height: 50vw !important;
+      }
+    }
+    // ------- Column Two --------
+
+    .col-two {
+      order: 0;
+      height: 80vw !important;
+      width: 100vw;
+      .imgContainer-css {
+        background-position-x: center !important;
+      }
+    }
+  }
+}
+
+// Small Screens
+@media (max-width: 768px) {
+  .port-section-two {
+    // ------- Column One --------
+    .col-one {
+      grid-template-columns: 1fr !important;
+      order: 1;
+      .info {
+        height: 100vw !important;
+      }
+    }
+    // ------- Column Two --------
+
+    .col-two {
+      height: 100vw !important;
+      width: 100vw;
+    }
+  }
+}
+
+//  =========== End Section Two ===========
+//  ============= End Portfolio Images =============

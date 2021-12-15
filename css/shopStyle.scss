@@ -1,0 +1,512 @@
+@import "newsStyle";
+@import "style";
+
+// ============= Start Header =============
+// ============= End Header =============
+
+.header{
+  .container{
+    a{
+      color: $main-backGroundColor;
+    }
+  }
+}
+
+
+// ============= Start Landing Page =============
+
+.landing-page {
+  height: 72.3vh;
+  background-image: url(../images/shop-landing-img.jpg);
+  &::before {
+    width: 100%;
+    height: 60vh;
+    top: 4.6rem;
+  }
+  .title {
+    position: absolute;
+    top: 73.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h1 {
+      @include for_h1();
+      color: $main-whiteColor;
+      font-weight: 600;
+      font-size: 160px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Ipad Screen
+@media (max-width: 992px) {
+  .landing-page {
+    height: 40vh !important;
+    &::before {
+      display: block;
+      height: 34vh !important;
+      top: 4rem !important;
+    }
+    .title {
+      top: 85.7% !important;
+    }
+  }
+}
+// Small Screens
+@media (max-width: 768px) {
+  .landing-page {
+    height: 34vh !important;
+    &::before {
+      height: 27vh !important;
+      top: 4.4rem;
+    }
+    .title {
+      top: 82% !important;
+    }
+  }
+}
+
+// ============= End Landing Page =============
+
+// ============= Start Buttons =============
+.btns-section {
+  margin-bottom: 7rem;
+  .container {
+    padding: 0;
+    h1 {
+      @include for_h1();
+      font-size: 35px;
+    }
+    .btn-container {
+      display: flex;
+      gap: 30px;
+      .btn {
+        @include borBtns(); 
+        margin-left: 0 !important;
+      }
+      .btn-one {
+        color: $main-whiteColor;
+        background: $main-backGroundColor;
+        border: solid 2px $main-whiteColor;
+      }
+      .btn-two {
+        background: $main-whiteColor;
+        border: solid 2px $main-backGroundColor;
+      }
+      .btn-three {
+        color: $main-whiteColor;
+        background: $main-backGroundColor;
+        transform: skew(25deg);
+        span {
+          transform: skew(-25deg);
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+// Ipad Screen
+@media (max-width: 992px) {
+  .btns-section {
+    .container {
+      .btn-container {
+        display: grid;
+      }
+    }
+  }
+}
+// Small Screens
+@media (max-width: 768px) {
+  .container {
+    h1 {
+      text-align: center;
+    }
+    .btn-container {
+      display: grid;
+      justify-content: center;
+    }
+  }
+}
+
+// ============= End Buttons =============
+
+//  ============= Start Accordions And Tabs =============
+
+.accordions {
+  margin-bottom: 7rem;
+  .container {
+    padding: 0;
+    h1 {
+      @include for_h1();
+      font-size: 35px;
+    }
+
+    .other-content {
+      display: flex;
+      // ------ First Column -------
+      .col-one {
+        display: grid;
+        gap: 20px;
+        height: 100%;
+
+        .box {
+          .mybtn {
+            position: relative;
+            background: $main-whiteColor;
+            width: 516px;
+            height: 65px;
+            border: solid 2px $main-backGroundColor;
+            cursor: pointer;
+            margin: 0 10px;
+            margin-left: 0 !important;
+            text-align: start;
+            padding-left: 30px;
+            transition: $main-transition;
+            margin-bottom: 10px;
+
+            &::after {
+              content: "+";
+              position: absolute;
+              right: 10px;
+              top: 39%;
+            }
+          }
+          .active {
+            background: $main-backGroundColor;
+            color: $main-whiteColor;
+            &::after {
+              content: "-";
+            }
+          }
+          .hidden-content {
+            opacity: 0;
+            width: 550px;
+            height: 0px;
+            padding: 0;
+            line-height: 40px;
+            transition: all 0.2s ease-in-out;
+
+            color: #60656b;
+          }
+          .active_two {
+            // display: block;
+            padding: 20px 0px;
+            height: initial;
+            opacity: 1;
+          }
+        }
+      }
+
+      // ------ Second Column -------
+
+      .col-two {
+        height: 100%;
+        .btns-container {
+          margin-bottom: 3rem;
+          .myBtn {
+          @include borBtns(); 
+            margin-left: 10px;
+            border: solid 2px $main-backGroundColor;
+            background: $main-whiteColor;
+            margin-bottom: 20px;
+          }
+          .btn-three {
+            color: $main-whiteColor;
+            background: $main-backGroundColor;
+            border: solid 2px $main-whiteColor;
+          }
+        }
+        p {
+          height: 100%;
+          display: inline-flex;
+          align-items: center;
+          color: #60656b;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+}
+
+// Ipad Screen
+@media (max-width: 992px) {
+  .accordions {
+    .container {
+      .other-content {
+        flex-direction: column;
+        gap: 50px;
+        .col-one {
+          .mybtn {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+}
+// Small Screens
+@media (max-width: 768px) {
+  .accordions {
+    .container {
+      padding: 10px 20px;
+      overflow-x: hidden;
+      .other-content {
+        .col-one {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          height: 100%;
+
+          .box {
+            width: 100% !important;
+
+            .active_two {
+              display: inline;
+              width: 70% !important;
+            }
+          }
+        }
+      }
+
+      .col-two {
+        .btns-container {
+          .myBtn {
+            margin-bottom: 20px !important;
+          }
+        }
+      }
+    }
+  }
+}
+//  ============= End Accordions And Tabs =============
+// ============= Start Loader =============
+
+.loader-section {
+  margin-bottom: 3rem;
+  .container {
+    .title {
+      @include for_h1();
+      font-size: 35px;
+    }
+
+    // -----------
+
+    .other-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 250px));
+      padding: 0 20px;
+      .box {
+        position: relative;
+        width: fit-content;
+        svg {
+          width: 150px;
+          height: 150px;
+          position: relative;
+          circle {
+            width: 150px;
+            height: 150px;
+            fill: none;
+            stroke-width: 2;
+            stroke: #e9e9ea;
+            -webkit-transform: translate(5px, 5px);
+            transform: translate(5px, 5px);
+
+            stroke-linecap: round;
+          }
+        }
+
+        .info {
+          text-align: center;
+          position: relative;
+          top: -50%;
+          color: $main-backGroundColor;
+          h3 {
+            font-size: 43px;
+          }
+        }
+      }
+      .box-one {
+        circle {
+          stroke-dasharray: 219;
+          stroke-dashoffset: 410;
+        }
+        circle:nth-child(1) {
+          stroke-dashoffset: 130px;
+          stroke: #e9e9ea;
+        }
+      }
+      .box-two {
+        circle {
+          stroke-dasharray: 219;
+          stroke-dashoffset: 410;
+        }
+        circle:nth-child(1) {
+          stroke-dashoffset: 190px;
+          stroke: #e9e9ea;
+        }
+      }
+      .box-three {
+        circle {
+          stroke-dasharray: 220;
+          stroke-dashoffset: 550;
+        }
+        circle:nth-child(1) {
+          stroke-dashoffset: 100px;
+          stroke: #e9e9ea;
+        }
+      }
+      .box-four {
+        circle {
+          stroke-dasharray: 240;
+          stroke-dashoffset: 550;
+        }
+        circle:nth-child(1) {
+          stroke-dashoffset: 170px;
+          stroke: #e9e9ea;
+        }
+      }
+    }
+  }
+}
+
+// Ipad Screen
+@media (max-width: 992px) {
+  .loader-section {
+    .container {
+      .other-content {
+        justify-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// ============= End Loader =============
+
+//  ============= Start Milestones =============
+
+.milestones-section {
+  margin-bottom: 3rem;
+  .container {
+    .title {
+      @include for_h1();
+      font-size: 35px;
+    }
+    .other-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(299px, 250px));
+      justify-items: center;
+      justify-content: center;
+      .col {
+        width: fit-content;
+        display: flex;
+        gap: 20px;
+
+        img {
+          opacity: 0.2;
+          width: 60px;
+        }
+        .info {
+          color: $main-backGroundColor;
+          h3 {
+            font-size: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+// Ipad Screen
+@media (max-width: 992px) {
+  .milestones-section {
+    .container {
+      .other-content {
+        gap: 40px;
+      }
+    }
+  }
+}
+
+// Small Screens
+@media (max-width: 768px) {
+  .milestones-section {
+    margin-bottom: 10rem;
+    .container {
+      .other-content {
+        justify-content: start;
+        justify-items: start;
+      }
+    }
+  }
+}
+//  ============= End Milestones =============
+
+// ============= Start Icon Boxes =============
+.icon-boxes-section {
+  margin-bottom: 3rem;
+  .container {
+    .title {
+      @include for_h1();
+      font-size: 35px;
+    }
+    .other-content {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 40px;
+      .col {
+        h1 {
+          position: relative;
+          font-size: 82px;
+          color: $main-backGroundColor;
+          span {
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 13px;
+          }
+        }
+        div {
+          color: #60656b;
+        }
+      }
+    }
+  }
+}
+// Ipad Screen
+@media (max-width: 992px) {
+  .icon-boxes-section {
+    .container {
+      .other-content {
+        grid-auto-flow: initial;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}
+
+// Small Screens
+@media (max-width: 768px) {
+  .icon-boxes-section {
+    .container {
+      .other-content {
+        gap: 20px;
+        grid-template-columns: initial !important;
+        gap: 0px !important;
+        .col {
+          h1 {
+            span {
+              left: 180px;
+            }
+          }
+          div {
+            padding: 0 30px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+// ============= End Icon Boxes =============

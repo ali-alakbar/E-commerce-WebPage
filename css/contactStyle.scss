@@ -1,0 +1,119 @@
+@import "style";
+@import "shopStyle";
+
+// ============= Start Contact Section =============
+.contactUs {
+  margin-bottom: 3rem;
+  .container {
+    padding: 0;
+    h1 {
+      @include for_h1();
+      position: relative;
+      font-size: 40px;
+      text-align: center;
+    }
+
+    .contact-info {
+      display: grid;
+      input,
+      textarea {
+        padding: 10px 35px;
+        width: 84.5vw;
+        font-size: 13px;
+        height: 60px;
+        border: solid 1px #08162412;
+        background: #f4f5fa;
+        margin-bottom: 2rem;
+        font-style: italic;
+      }
+      textarea {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        resize: vertical;
+        max-height: 360px !important;
+        min-height: 130px !important;
+      }
+      .name {
+      }
+      .email {
+      }
+      .write {
+      }
+    }
+  }
+}
+
+// ============= End Contact Section =============
+
+// ============= Start Map Section =============
+
+.map-section {
+  overflow-x: hidden;
+  #map {
+    position: relative;
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .other-content {
+    width: 54vw;
+    z-index: 20;
+    position: relative;
+    height: 100%;
+
+    .main-content {
+      position: absolute;
+      left: 100px;
+      top: 50px;
+      z-index: 20;
+      background: $main-backGroundColor;
+      color: $main-whiteColor;
+      width: 26vw;
+      height: 70vh;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+
+      .info {
+        .row {
+          margin-bottom: 1rem;
+          padding-right: 1rem;
+          font-size: 15px;
+          span {
+            margin-left: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+// Ipad Screen
+@media (max-width: 992px) {
+  .map-section {
+    #map {
+      .other-content {
+        .main-content {
+          left: 40px;
+          width: 40vw;
+          height: 37vh;
+        }
+      }
+    }
+  }
+}
+// Small Screens
+@media (max-width: 768px) {
+  .map-section {
+    #map {
+      .other-content {
+        .main-content {
+          left: 35px;
+          width: 80vw;
+          height: 37vh;
+        }
+      }
+    }
+  }
+}
+
+// ============= End Map Section =============
